@@ -1,0 +1,7 @@
+
+Action: Encode - Text: 
+Action: Encode - Result: 
+Action: Encode - Text: test
+Action: Encode - Result: 3121534312
+Action: Image encode - Text: test
+Action: Image encode - Result: 
