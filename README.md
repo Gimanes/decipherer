@@ -6,6 +6,7 @@ a python script to decipher messages using a simple substitution cipher.
 
 decipherer supports the following ciphers:
 * substitution cipher (my cipher i guess)
+* caesers cipher (W.I.P.)
 
 # status:
 
@@ -21,6 +22,5 @@ or:
 ```
 pip install imageio
 pip install numpy
-pip install imageio.v2
 ```
 then you can run the script

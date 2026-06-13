@@ -1,6 +1,7 @@
 import imageio
 import numpy as np
 import imageio.v2 as imageio
+import caeser
 
 translations = {
     "en": {
@@ -104,20 +105,35 @@ def imageEncode(text, language, sstv_on):
         f.write(f"Action: Image encode - Text: {text}\n")
         f.write(f"Action: Image encode - Result: {translated_text}\n")
 
-choice = input("Do you want to encode, decode, or image encode? (e/d/i): ")
-if choice == "e":
+
+
+print("Cipher Menu:")
+print("1 - SUBSTITUON CIPHER")
+print("2 - CAESAR CIPHER (W.I.P.)")
+#print("3 - BINARY")
+#print("4 - MORSE CODE (W.I.P.)")
+#print("5 - VIGENERE CIPHER (W.I.P.)")
+# the commented choices are ciphers coming next
+starter_choice = input()
+if starter_choice == "1":
+    choice = input("Do you want to encode, decode, or image encode? (e/d/i): ")
+    if choice == "e":
+        text = input("Enter text to encode: ")
+        print(encode(text, "en"))
+    elif choice == "d":
+        text = input("Enter text to decode: ")
+        print(decode(text, "en"))
+    elif choice == "i":
+        text = input("Enter text to image encode: ")
+        sstv = input("Do you want to use special mode for SSTV? (y/n): ")
+        if sstv.lower() == "y":
+            imageEncode(text, "en", True)
+        else:
+            imageEncode(text, "en", False)
+            print("Done")
+    else: 
+        print("Invalid choice. Please enter 'e' for encode or 'd' for decode.")
+elif starter_choice == "2":
     text = input("Enter text to encode: ")
-    print(encode(text, "en"))
-elif choice == "d":
-    text = input("Enter text to decode: ")
-    print(decode(text, "en"))
-elif choice == "i":
-    text = input("Enter text to image encode: ")
-    sstv = input("Do you want to use special mode for SSTV? (y/n): ")
-    if sstv.lower() == "y":
-        imageEncode(text, "en", True)
-    else:
-        imageEncode(text, "en", False)
-    print("Done")
-else: 
-    print("Invalid choice. Please enter 'e' for encode or 'd' for decode.")
+    shift = input("Enter alphabet shift (You can use only integers): ")
+    caeser.caesar_cipher(text, int(shift))
