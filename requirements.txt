@@ -1,3 +1,2 @@
 imageio
-imageio.v2
 numpy
