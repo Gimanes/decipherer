@@ -2,6 +2,7 @@ import imageio
 import numpy as np
 import imageio.v2 as imageio
 import caeser
+import binary
 
 log_on = False
 
@@ -120,7 +121,7 @@ def imageEncode(text, language, sstv_on):
 print("Cipher Menu:")
 print("1 - SUBSTITUON CIPHER")
 print("2 - CAESAR CIPHER (W.I.P.)")
-#print("3 - BINARY")
+print("3 - BINARY")
 #print("4 - MORSE CODE (W.I.P.)")
 #print("5 - VIGENERE CIPHER (W.I.P.)")
 # the commented choices are ciphers coming next
@@ -147,3 +148,11 @@ elif starter_choice == "2":
     text = input("Enter text to encode: ")
     shift = input("Enter alphabet shift (You can use only integers): ")
     caeser.caesar_cipher(text, int(shift))
+elif starter_choice == "3":
+    choice = input("Do you want to encode or decode? (e/d): ")
+    if choice == "e":
+        text = input("Enter text to encode: ")
+        binary.encode(text)
+    if choice == "d":
+        text = input("Enter text to decode: ")
+        binary.decode(text)
