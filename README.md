@@ -11,7 +11,7 @@ decipherer supports the following ciphers:
 
 # status:
 
-decipherer is in development and not yet ready to use other ciphers, but the substitution cipher is fully implemented and ready to use.
+decipherer is in development and not yet ready to be used by anyone.
 
 # usage:
 
