@@ -3,6 +3,8 @@ import numpy as np
 import imageio.v2 as imageio
 import caeser
 
+log_on = False
+
 translations = {
     "en": {
         "a": "41", "b": "42", "c": "43", "d": "121", "e": "15",
@@ -39,9 +41,12 @@ def encode(text, language):
             translation += translations[language][char]
         else:
             translation += char
-    with open("log.txt", "a") as f:
-        f.write(f"Action: Encode - Text: {text}\n")
-        f.write(f"Action: Encode - Result: {translation}\n")
+    if log_on:
+        with open("log.txt", "a") as f:
+            f.write(f"Action: Encode - Text: {text}\n")
+            f.write(f"Action: Encode - Result: {translation}\n")
+    else:
+        pass
     return translation
 translated_text = encode(text, "en")
 print(translated_text)
@@ -62,9 +67,12 @@ def decode(text, language):
         if not found:
             decoded_text += text[i]
             i += 1
-    with open("log.txt", "a") as f:
-        f.write(f"Action: Decode - Text: {text}\n")
-        f.write(f"Action: Decode - Result: {decoded_text}\n")
+    if log_on:
+        with open("log.txt", "a") as f:
+            f.write(f"Action: Decode - Text: {text}\n")
+            f.write(f"Action: Decode - Result: {decoded_text}\n")
+    else:
+        pass
     return decoded_text
 
 def imageEncode(text, language, sstv_on):
@@ -81,7 +89,7 @@ def imageEncode(text, language, sstv_on):
                 for r in matrix_key[char]:
                     img[block_row + r][col] = 255
             else:
-                print("bih text fuck of")
+                print("Text is too big, please retry with a smaller text next time")
                 break
 
     rotated_img = np.rot90(img, -1)
@@ -100,10 +108,12 @@ def imageEncode(text, language, sstv_on):
         imageio.imwrite("encoded_image.png", upscaled_to_sstv_img)
     else:
         imageio.imwrite("encoded_image.png", rotated_img)
-
-    with open("log.txt", "a") as f:
-        f.write(f"Action: Image encode - Text: {text}\n")
-        f.write(f"Action: Image encode - Result: {translated_text}\n")
+    if log_on:
+        with open("log.txt", "a") as f:
+            f.write(f"Action: Image encode - Text: {text}\n")
+            f.write(f"Action: Image encode - Result: {translated_text}\n")
+    else:
+        pass
 
 
 
