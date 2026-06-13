@@ -40,7 +40,7 @@ def encode(text: str):
             f.write(f"Action: Binary Encode - Result: {translation}\n")
     else:
         pass 
-    return translation
+    print(translation)
 
 def decode(text: str):
     reverse_translation = {v: k for k, v in binary.items()}
@@ -63,4 +63,4 @@ def decode(text: str):
             f.write(f"Action: Binary Decode - Result: {decoded_text}\n")
     else:
         pass
-    return decoded_text
+    print(decoded_text)
