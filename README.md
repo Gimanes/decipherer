@@ -12,7 +12,7 @@ decipherer supports the following ciphers:
 
 # status:
 
-decipherer is in development and not yet ready to be used by anyone.
+decipherer is in the state of being always developed until i got every cipher on here.
 
 # usage:
 
