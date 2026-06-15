@@ -8,6 +8,7 @@ decipherer supports the following ciphers:
 * substitution cipher (my cipher i guess)
 * caesers cipher (W.I.P.)
 * binary
+* morse code
 
 # status:
 
