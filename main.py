@@ -3,6 +3,7 @@ import numpy as np
 import imageio.v2 as imageio
 import caeser
 import binary
+import morse
 
 log_on = False
 
@@ -122,7 +123,7 @@ print("Cipher Menu:")
 print("1 - SUBSTITUON CIPHER")
 print("2 - CAESAR CIPHER (W.I.P.)")
 print("3 - BINARY")
-#print("4 - MORSE CODE (W.I.P.)")
+print("4 - MORSE CODE")
 #print("5 - VIGENERE CIPHER (W.I.P.)")
 # the commented choices are ciphers coming next
 starter_choice = input()
@@ -156,3 +157,13 @@ elif starter_choice == "3":
     if choice == "d":
         text = input("Enter text to decode: ")
         binary.decode(text)
+elif starter_choice == "4":
+    choice = input("Do you want to encode or decode? (e/d): ")
+    if choice == "e":
+        text = input("Enter text to encode: ")
+        morse.encode(text)
+    if choice == "d":
+        text = input("Enter text to decode: ")
+        morse.decode(text)
+else:
+    print("it aint working")
