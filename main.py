@@ -1,7 +1,7 @@
 import imageio
 import numpy as np
 import imageio.v2 as imageio
-import caeser
+import caesar as caeser
 import binary
 import morse
 

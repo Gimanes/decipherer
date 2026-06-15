@@ -6,7 +6,7 @@ a python script to decipher messages using a simple substitution cipher.
 
 decipherer supports the following ciphers:
 * substitution cipher (my cipher i guess)
-* caesers cipher (W.I.P.)
+* caesars cipher (W.I.P.)
 * binary
 * morse code
 
