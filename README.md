@@ -26,3 +26,7 @@ pip install imageio
 pip install numpy
 ```
 then you can run the script
+
+# ko-fi
+support me on ko-fi here
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/J1M022J788)
